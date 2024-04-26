@@ -9,7 +9,7 @@ ensemble_model = joblib.load('voting_ensemble_model.joblib')
 st.title('Predict Anomalies')
 
 # Inputs from the user
-logged_in = st.selectbox("Logged In", min_value=0, format_func=lambda x: '0' if x == 0 else '1')
+logged_in = st.number_input("Logged In", min_value=0, step=1, value=50)
 count = st.number_input("Count", min_value=0, step=1, value=50)
 dst_host_count = st.number_input("Destination Host Count", min_value=0, step=1, value=50)
 protocol_type = st.selectbox("Protocol Type", [0, 1,2])
